@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: pl.spot.on.micronaut.perftest
+---
+testFramework: junit
+sourceLanguage: java

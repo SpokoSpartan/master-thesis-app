@@ -1,0 +1,6 @@
+<Resource id="EntityManagerConfig" type="DataSource">
+    JdbcDriver org.h2.Driver
+    JdbcUrl jdbc:h2:mem:testdb;DB_CLOSE_ON_EXIT=FALSE
+    UserName h2
+    Password h2
+</Resource>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
+
+    <persistence-unit name="custom-unit">
+        <jta-data-source>movieDatabase</jta-data-source>
+        <non-jta-data-source>movieDatabaseUnmanaged</non-jta-data-source>
+        <class>pl.spot.on.jakarta.perftest.product.Product</class>
+        <class>pl.spot.on.jakarta.perftest.product.Category</class>
+        <class>pl.spot.on.jakarta.perftest.order.Order</class>
+        <class>pl.spot.on.jakarta.perftest.order.OrderLine</class>
+        <class>pl.spot.on.jakarta.perftest.customer.Customer</class>
+        <class>pl.spot.on.jakarta.perftest.customer.Address</class>
+        <properties>
+            <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)"/>
+            <property name="openjpa.ConnectionURL" value="jdbc:h2:mem:testdb;DB_CLOSE_ON_EXIT=FALSE"/>
+            <property name="openjpa.ConnectionDriverName" value="org.h2.Driver"/>
+            <property name="openjpa.ConnectionUserName" value="h2"/>
+            <property name="openjpa.ConnectionPassword" value="h2"/>
+        </properties>
+    </persistence-unit>
+</persistence>
